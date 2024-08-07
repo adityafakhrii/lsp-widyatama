@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menghitung Luas Segitiga</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Interface program hitung luas segitiga -->
+    <div class="form-container">
+        <h2>Menghitung Luas Segitiga</h2>
+        <form>
+            <!-- Form berupa input alas dan tinggi -->
+            <div class="form-group">
+                <label for="alas">Alas</label> :
+                <input type="text" id="alas" name="alas" placeholder="Masukkan alas...">
+            </div>
+            <div class="form-group">
+                <label for="tinggi">Tinggi</label> :
+                <input type="text" id="tinggi" name="tinggi" placeholder="Masukkan tinggi...">
+            </div>
+            <!-- Hasil akan tampil disini -->
+            <div class="form-group">
+                <label for="hasil">Hasil</label> :
+                <input type="text" id="hasil" name="hasil" value="Hasil tertera disini" disabled>
+            </div>
+            <!-- Tombol untuk hitung dan hapus data -->
+            <div class="form-buttons">
+                <input type="button" id="hitung" value="Hitung">
+                <button type="reset">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // mengambil tombol dengan id 'hitung'
+            document.getElementById('hitung').addEventListener('click', function() {
+                // mengambil data alas dan tinggi
+                let alas = document.getElementById('alas').value
+                let tinggi = document.getElementById('tinggi').value
+
+                // memastikan inputan berupa angka
+                alas = parseFloat(alas)
+                tinggi = parseFloat(tinggi)
+
+                // proses hitung luas segitiga
+                let luas = 0.5 * alas * tinggi
+
+                // menampilkan hasil
+                document.getElementById('hasil').value = luas
+            })
+        })
+    </script>
+</body>
+</html>
